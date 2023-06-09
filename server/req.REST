@@ -1,0 +1,19 @@
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+    "username":"dssha",
+    "email":"usj@gmail.com",
+    "password":"2"
+}
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+
+  "email": "usj@gmail.com",
+  "password": "2"
+
+}
