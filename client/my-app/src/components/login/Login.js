@@ -6,7 +6,7 @@ import './Login.css';
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+
   const [error, setError] = useState('');
   let navigate = useNavigate();
 
@@ -32,9 +32,6 @@ const Login = ({ onLogin }) => {
       });
   };
 
-  const handleRememberMeChange = (e) => {
-    setRememberMe(e.target.checked);
-  };
 
   return (
     <div className="section">
@@ -64,8 +61,7 @@ const Login = ({ onLogin }) => {
             className='checkbox'
               type="checkbox"
               id="rememberMe"
-              checked={rememberMe}
-              onChange={handleRememberMeChange}
+              
             />
             Remember me
           </label>
