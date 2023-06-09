@@ -40,8 +40,7 @@ router.post('/signup', async (req, res) => {
 // User login
 router.post('/login', async (req, res) => {
     try {
-      
-        
+   
       const { email, password } = req.body;
       // Check if user exists
       const user = await User.findOne({ email });
@@ -56,6 +55,9 @@ router.post('/login', async (req, res) => {
       }
   
       res.json({message:"login success",Username:user.username});
+      if (!email || !password ) {
+        return res.status(400).json({ message: 'Must fil email and password' });
+      }
     
     } catch (error) {
       res.status(500).json({ message: 'Internal server error' });
