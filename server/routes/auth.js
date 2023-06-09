@@ -44,14 +44,14 @@ router.post('/login', async (req, res) => {
         
       const { email, password } = req.body;
 
-      if (!email || !password || !username) {
+      if (!email || !password ) {
         return res.status(400).json({ message: 'Must fil email and password' });
       }
   
       // Check if user exists
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ message: 'Invalid credentials' });
+        return res.status(400).json({ message: 'Invalid username or password' });
       }
   
       // Compare the password
