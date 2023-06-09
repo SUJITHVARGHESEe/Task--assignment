@@ -1,3 +1,3 @@
 # Task--assignment
 
- for this project run : npm run dev
+ for run this project clone this and use : npm run dev 
